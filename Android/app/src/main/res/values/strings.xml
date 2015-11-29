@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Congente</string>
+    <string name="moto">Idéias que transformam.</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="error">Problemas...</string>
+
+    <string name="app_id">426065327587328</string>
+
+    <string name="loading_title">Verificando...</string>
+    <string name="loading_message">Conectando com Servidor</string>
+
+    <string name="welcome_message">O melhor app já desenvolvido em um Hackathon!\n Desistir Nunca, Render-se Jamais! :P </string>
+
+    <string name="login_usuario_hint">Login</string>
+    <string name="login_senha_hint">Senha</string>
+    <string name="login_esqueceu_senha"><u>Esqueceu sua senha?</u></string>
+    <string name="login_entrar">Entrar</string>
+    <string name="login_registrar">Registrar</string>
+    <string name="login_facebook">Entrar com facebook</string>
+    <string name="login_error">Erro no login!\nVerifique seu login e tente novamente!</string>
+
+    <string name="error_emptylogin">Usuario e senha não podem ser vazias!</string>
+    <string name="error_facebook">Error ao logar via Facebook!\nPor favor tente novamente</string>
+</resources>

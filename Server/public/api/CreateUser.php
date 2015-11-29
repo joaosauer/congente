@@ -8,7 +8,7 @@ $json = json_decode(@file_get_contents('php://input'), TRUE);
 
 //Saving the user data.
 $database = new DataBase();
-$result = $database->login($json['usuario'], $json['senha']);
+$result = $database->createUser($json['usuario'], $json['senha']);
 if($result == TRUE) {
 	//Sending to response.
 	header("HTTP/1.0 200 OK");
