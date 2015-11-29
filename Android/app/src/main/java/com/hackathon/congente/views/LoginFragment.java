@@ -54,12 +54,19 @@ public class LoginFragment extends Fragment implements LoginCallback{
                 goToIdeias(false);
             }
         };
+
         // If the access token is available already assign it.
         if(AccessToken.getCurrentAccessToken() != null) {
             _user.fb_token = AccessToken.getCurrentAccessToken().getToken();
             _user.usuario = AccessToken.getCurrentAccessToken().getUserId();
         }
 
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putString("WORKAROUND_FOR_BUG_19917_KEY", "WORKAROUND_FOR_BUG_19917_VALUE");
+        super.onSaveInstanceState(outState);
     }
 
     @Override
@@ -81,23 +88,23 @@ public class LoginFragment extends Fragment implements LoginCallback{
         _progressBar = new ProgressDialog(getActivity());
         if(_user == null || !_user.isValid()) {
             //Showing the welcome
-            view.findViewById(R.id.welcome_screen).setVisibility(View.VISIBLE);
-            Button okButton = (Button) view.findViewById(R.id.welcome_button);
-            okButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    showLogin(getView());
-                }
-            });
+//            view.findViewById(R.id.welcome_screen).setVisibility(View.VISIBLE);
+//            Button okButton = (Button) view.findViewById(R.id.welcome_button);
+//            okButton.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+                    showLogin(view);
+//                }
+//            });
         }
-        else {
-            goToIdeias(true);
+        else  {
+            goToIdeias(_user.fb_token == null); //Se for via Facebook, então não validamos a conta.
         }
         return view;
     }
 
     private void showLogin(View view) {
-        view.findViewById(R.id.welcome_screen).setVisibility(View.GONE);
+//        view.findViewById(R.id.welcome_screen).setVisibility(View.GONE);
         LoginButton loginButton = (LoginButton) view.findViewById(R.id.login_button);
         loginButton.setReadPermissions("public_profile", "user_friends");
         loginButton.setFragment(this);
@@ -166,7 +173,7 @@ public class LoginFragment extends Fragment implements LoginCallback{
         else {
             cancelLoading();
             //starting the main fragment
-            Fragment fragment =  new IdeiasFragment();
+            Fragment fragment =  new PrincipalFragment();
             FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.main, fragment);
@@ -208,7 +215,6 @@ public class LoginFragment extends Fragment implements LoginCallback{
         _progressBar.setMessage(getString(R.string.loading_message));
         _progressBar.setCancelable(false);
         _progressBar.show();
-
     }
 
     private void cancelLoading(){

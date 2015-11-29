@@ -7,4 +7,12 @@
     <color name="light_blue">#719be1</color>
     <color name="dark_blue">#0e36e2</color>
     <color name="fb_blue">#315b99</color>
+
+    <color name="menu_bar">#599be5</color>
+    <color name="principal_option1">#f91313</color>
+    <color name="principal_option2">#f17103</color>
+    <color name="principal_option3">#e3b402</color>
+    <color name="principal_option4">#70d701</color>
+
+
 </resources>

@@ -4,6 +4,7 @@
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
     <string name="error">Problemas...</string>
+    <string name="menu">Menu</string>
 
     <string name="app_id">426065327587328</string>
 
@@ -21,5 +22,31 @@
     <string name="login_error">Erro no login!\nVerifique seu login e tente novamente!</string>
 
     <string name="error_emptylogin">Usuario e senha não podem ser vazias!</string>
+    <string name="error_emptyideia">Nome e problema não podem ser vazios!</string>
     <string name="error_facebook">Error ao logar via Facebook!\nPor favor tente novamente</string>
+
+    <string name="principal_titulo">Início</string>
+    <string name="principal_resolva">Resolva</string>
+    <string name="principal_discuta">Discuta</string>
+    <string name="principal_faca">Faça</string>
+    <string name="principal_inspire">Inspire</string>
+    <string name="principal_exemplo">Destaque de Idéias</string>
+    <string name="principal_exemplo2">(através de um carrosel)</string>
+
+    <string name="addideia_titulo">Nova Idéia!</string>
+    <string name="addideia_nome">Nome:</string>
+    <string name="addideia_descricao">Descrição:</string>
+    <string name="addideia_salvar">Salvar</string>
+    <string name="addideia_problema">Problema:</string>
+    <string name="addideia_nome_hint">Uma frase sobre a idéia.</string>
+    <string name="addideia_problema_hint">Uma descrição suscinta do problema que você tem.</string>
+    <string name="addideia_error">Erro em Cadastrar idéia!\nVerifique seu texto e tente novamente!</string>
+
+
+    <!-- Nav Drawer Menu Items -->
+    <string-array name="nav_drawer_items">
+        <item >Perfil</item>
+        <item >Logout</item>
+    </string-array>
+
 </resources>

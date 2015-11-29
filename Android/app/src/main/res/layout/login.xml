@@ -15,12 +15,9 @@
             android:orientation="vertical"
             android:gravity="center">
             <ImageView
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:textSize="30sp"
-                android:src="@drawable/logo"
-                android:layout_marginBottom="40dp"
-                android:textColor="@color/dark_grey"/>
+                android:src="@drawable/logo"/>
             <EditText
                 android:id="@+id/login_usuario"
                 android:layout_width="fill_parent"

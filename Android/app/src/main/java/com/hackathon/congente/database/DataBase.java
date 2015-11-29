@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.facebook.login.LoginManager;
 import com.hackathon.congente.datatype.User;
 
 public class DataBase extends SQLiteOpenHelper {
@@ -51,6 +52,13 @@ public class DataBase extends SQLiteOpenHelper {
             instance = new DataBase(context);
         }
         return instance;
+    }
+
+    public void deleteUserData() {
+        SQLiteDatabase sqlLite = getReadableDatabase();
+        sqlLite.execSQL("DROP TABLE IF EXISTS " + TABLE_SETTINGS);
+        onCreate(sqlLite);
+        LoginManager.getInstance().logOut();
     }
 
     public User getUserData() {
